@@ -11,7 +11,7 @@
 -> 1,2 is in the case of linear regression, we can make shape of cost function and gradient descent algorithm can find the optimizing position by diffenretiating postion and moving left and right.
 
 
-## classification
+## Classification
 1. binary classification<br>
 -> classify the some set by 1 or 0.
 
