@@ -5,8 +5,8 @@ tf.set_random_seed(777)
 # x_train = [1,2,3]
 # y_train = [1,2,3]
 
-X = tf.placeholder(tf.float32,shape = [None])
-Y = tf.placeholder(tf.float32,shape = [None])
+X = tf.placeholder(tf.float32,shape = [None],name="X")
+Y = tf.placeholder(tf.float32,shape = [None],name="Y")
 
 w = tf.Variable(tf.random_normal([1]),name="weight")
 b = tf.Variable(tf.random_normal([1]),name="bias")
@@ -25,9 +25,14 @@ sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
 #summary
-merged = tf.summary.merge_all
-writer = tf.summary.FileWriter("/tmp/regression_logs",sess.graph_def)
+h_hist = tf.summary.scalar('hypothesis',hypothesis)
+cost_hist = tf.summary.scalar('cost',cost)
+# optimizer_hist = tf.summary.scalar('opt',optimizer)
 
+merge = tf.summary.merge_all()
+
+
+writer = tf.summary.FileWriter('./board/sample_3',sess.graph)
 
 #training
 for step in range(5000):
@@ -37,7 +42,8 @@ for step in range(5000):
 
     if step%20==0:
         print(step,cost_val,W_val,b_val)
-
+        # print("hello")
+        # writer.add_summary(summary,step)
 
 print(sess.run(hypothesis,feed_dict={X:[10]}))
 
