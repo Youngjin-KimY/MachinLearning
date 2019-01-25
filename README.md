@@ -25,3 +25,25 @@ if y = 0 -> cost(w) = -log(1-h(x))<br>
 
 3. gradient descent
 -> like first case, we can adapt gradient descent
+
+
+## Multidimension Classification
+1. softmax + one hot encoding
+
+2. cost function<br>
+-> Cross entropy<br>
+<pre/>
+ s(y)(expected value)                             L=Y(real)
+      [0.7,                                         [1.0,
+       0.2,        D(S,L) = -sigma Li * log(Si)      0.0,
+       0.1]                                          0.0]
+</code>
+
+Crose entropy is the way to get differences between "value of Real " one and "value of Hypothesis"
+
+first, value of cost function is input of sigmoid, and then we get value from 0 to 1.<br>
+second, if you can use one hot encoding, we can get vector which know us which part is classified. 
+
+
+3. gradient descent<br>
+but I found new optimizer, name is AdamOptimizer
