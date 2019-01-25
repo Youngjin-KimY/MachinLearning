@@ -32,12 +32,12 @@ if y = 0 -> cost(w) = -log(1-h(x))<br>
 
 2. cost function<br>
 -> Cross entropy<br>
-<pre/>
+~~~
  s(y)(expected value)                             L=Y(real)
       [0.7,                                         [1.0,
        0.2,        D(S,L) = -sigma Li * log(Si)      0.0,
        0.1]                                          0.0]
-</code>
+~~~
 
 Crose entropy is the way to get differences between "value of Real " one and "value of Hypothesis"
 
